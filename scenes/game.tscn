@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://resources/tilqmap.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/unit.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://sprites/pixil-frame-0_2.png" type="Texture" id=4]
 [ext_resource path="res://sprites/bashnya_1.png" type="Texture" id=5]
 [ext_resource path="res://sprites/pixil-frame-0_4.png" type="Texture" id=6]
+[ext_resource path="res://scripts/Spawnwall.gd" type="Script" id=7]
+[ext_resource path="res://scenes/Node2D.gd" type="Script" id=8]
+[ext_resource path="res://scenes/Wall.tscn" type="PackedScene" id=9]
 
 [node name="game" type="Node2D"]
 
@@ -68,3 +71,25 @@ texture = ExtResource( 6 )
 position = Vector2( 1164, 649 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
+
+[node name="Spawn" type="Button" parent="."]
+margin_left = 1533.0
+margin_top = 906.0
+margin_right = 1670.0
+margin_bottom = 996.0
+script = ExtResource( 7 )
+
+[node name="Node2D" type="Node2D" parent="Spawn"]
+position = Vector2( -1533, -906 )
+script = ExtResource( 8 )
+
+[node name="ColorZone" type="Node2D" parent="."]
+
+[node name="Wall" parent="." instance=ExtResource( 9 )]
+
+[node name="Colision_zone" type="Area2D" parent="."]
+position = Vector2( 1164, 649 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Colision_zone"]
+polygon = PoolVector2Array( -1556, 872, -1518, 600, -1372, 494, -212, 464, 268, 294, 578, 222, 592, -80, 694, -564, 708, -1272, -316, -1306, -800, -1286, -752, -430, -760, -202, -1432, -88, -2078, 60, -1930, 734, -1930, 868 )
