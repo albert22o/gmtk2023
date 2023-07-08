@@ -26,3 +26,8 @@ func Walk_to_target():
 
 func Destroy():
 	self.queue_free()
+
+
+func _on_Area2D_area_entered(area):
+	if(area.is_in_group("damage")):
+		Destroy()
