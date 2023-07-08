@@ -2,7 +2,7 @@
 
 [ext_resource path="res://sprites/Sprite-0001.png" type="Texture" id=1]
 
-[sub_resource type="NavigationPolygon" id=2]
+[sub_resource type="NavigationPolygon" id=4]
 vertices = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 ) ]
@@ -21,7 +21,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 0/autotile/tile_size = Vector2( 64, 64 )
 0/autotile/spacing = 0
 0/autotile/occluder_map = [  ]
-0/autotile/navpoly_map = [ Vector2( 1, 0 ), SubResource( 2 ) ]
+0/autotile/navpoly_map = [ Vector2( 1, 0 ), SubResource( 4 ) ]
 0/autotile/priority_map = [  ]
 0/autotile/z_index_map = [  ]
 0/occluder_offset = Vector2( 0, 0 )
