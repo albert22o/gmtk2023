@@ -22,10 +22,7 @@ func Walk_to_target():
 	var direction = global_position.direction_to(navig.get_next_location())
 	var velocity = direction*speed
 	move_and_slide(velocity)
-#	navig.set_velocity(velocity)
-#	$Line2D.points = navig.get_nav_path()
 	pass
 
-
-func _on_NavigationAgent2D_path_changed():
-	pass
+func Destroy():
+	self.queue_free()

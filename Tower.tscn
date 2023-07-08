@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Tower.gd" type="Script" id=1]
+[ext_resource path="res://Bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/pixil-frame-0_4.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 206.002
+
+[sub_resource type="PrismMesh" id=3]
+
+[node name="Tower" type="Node2D"]
+position = Vector2( 482, 315 )
+script = ExtResource( 1 )
+bull = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 3.05176e-05, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="TowerSprite" type="Sprite" parent="."]
+position = Vector2( 5, -11 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+visible = false
+position = Vector2( 31, 1 )
+rotation = -1.5708
+scale = Vector2( 27.805, 47.487 )
+mesh = SubResource( 3 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

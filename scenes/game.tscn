@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://resources/tilqmap.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/unit.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://sprites/pixil-frame-0_2.png" type="Texture" id=4]
 [ext_resource path="res://sprites/bashnya_1.png" type="Texture" id=5]
 [ext_resource path="res://sprites/pixil-frame-0_4.png" type="Texture" id=6]
+[ext_resource path="res://Tower.tscn" type="PackedScene" id=7]
 
 [node name="game" type="Node2D"]
 
@@ -68,3 +69,6 @@ texture = ExtResource( 6 )
 position = Vector2( 1164, 649 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
+
+[node name="Tower" parent="." instance=ExtResource( 7 )]
+position = Vector2( 669, 919 )
